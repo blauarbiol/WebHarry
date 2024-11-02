@@ -1,0 +1,425 @@
+* {
+    margin: 0; /* Elimina marges per defecte */
+    padding: 0; /* Elimina espai interior per defecte */
+    box-sizing: border-box; /* Inclou padding i marges dins de les dimensions dels elements */
+}
+
+/* Estils globals per a l'HTML i el cos de la pàgina */
+html, body {
+    width: 100vw; /* Amplada total de la finestra del navegador */
+    height: auto; /* Altura automàtica per a l'element body */
+    display: flex; /* Utilitza Flexbox per a la disposició dels fills */
+    flex-direction: column; /* Organitza els fills en columna */
+    align-items: center; /* Centra els elements horitzontalment */
+    justify-content: flex-start; /* Alinea els elements a l'inici de la columna */
+    background-color: white; /* Color de fons blanc per a la pàgina */
+    color: #333; /* Color del text per a millor contrast amb el fons */
+    font-family: Arial, sans-serif; /* Tipus de lletra */
+}
+
+/* Estils per al botó d'subcripció */
+#boton-suscribe {
+    display: block; /* Mostra el botó com un bloc */
+    margin-top: 60px; /* Espai superior per al botó */
+    margin-bottom: 60px; /* Espai inferior per al botó */
+}
+
+/* Contenidor per a icones */
+.icon-container {
+    margin-left: 800px; /* Ajusta la posició horitzontal segons sigui necessari */
+    display: flex; /* Utilitza Flexbox per a la distribució */
+    justify-content: flex-start; /* Alinea els elements al principi */
+}
+
+/* Estils per a la capçalera */
+header {
+    width: 100vw; /* Amplada total per a la capçalera */
+    background-color: #333; /* Fons fosc per a la capçalera */
+    color: #fff; /* Color del text blanc */
+    padding: 0; /* Espai a dalt i a baix eliminat */
+}
+
+/* Estil per a les imatges dins de la capçalera */
+header img {
+    max-width: 100%; /* Ajusta la imatge a l'ample del contenidor */
+    height: auto; /* Manté la proporció de l'imatge */
+}
+
+/* Superposició de fons per al contingut */
+.background-overlay {
+    position: absolute; /* Posicionament absolut per sobre dels altres elements */
+    top: 0; /* Posició superior */
+    left: 0; /* Posició esquerra */
+    width: 100%; /* Amplada total */
+    height: 100%; /* Altura total */
+    background-color: rgba(0, 0, 0, 0.5); /* Fons negre amb transparència */
+    z-index: 0; /* Darrere del text */
+}
+
+/* Estil personalitzat per al text alineat a l'esquerra */
+.text-left-custom {
+    text-align: left; /* Alinear text a l'esquerra */
+}
+
+/* Contenidor principal per al contingut */
+main {
+    max-width: 1200px; /* Amplada màxima del contenidor principal */
+    width: 100%; /* Ajusta a amplada completa */
+    padding: 0; /* Espai interior eliminat */
+}
+
+/* Estils per a les imatges dins del carrusel */
+.carousel-item img {
+    width: 70%; /* Ajusta l'ample al 70% */
+    margin: 0 auto; /* Centra la imatge */
+    height: auto; /* Manté la proporció de la imatge */
+}
+
+/* Estils per a les icones de control del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fons fosc per les icones */
+    border-radius: 50%; /* Arrodoneix les cantonades de les icones */
+}
+
+/* Estils per als botons de control del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(1); /* Inverteix els colors si és necessari */
+    z-index: 10; /* Assegura que les icones estiguin per sobre d'altres elements */
+}
+
+/* Contenidor de vídeos musicals */
+.music-videos-container {
+    background-color: transparent; /* Fons transparent per integrar-se amb el contingut */
+    padding: 1px 0; /* Espaciat vertical */
+    margin: 2px 0; /* Margen per separar del contingut adjunt */
+}
+
+/* Estils per a les imatges d'àlbums */
+.album-img {
+    transition: transform 0.3s ease; /* Suavitza la transició al canviar la mida */
+    border-radius: 5px; /* Arrodoneix les cantonades */
+}
+
+/* Efecte al passar el cursor per a les imatges d'àlbums */
+.album-img:hover {
+    transform: scale(1.1); /* Augmenta el tamany al passar el cursor */
+}
+
+/* Estils per a seccions */
+section {
+    background-color: #444; /* Fons fosc per a seccions */
+    padding: 20px; /* Espai interior */
+    margin: 20px 0; /* Espai entre seccions */
+    border-radius: 8px; /* Arrodonir les cantonades */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Afegir ombra per a profunditat */
+}
+
+/* Estils per al peu de pàgina */
+footer {
+    background-color: #333; /* Fons fosc per al peu de pàgina */
+    color: #fff; /* Color del text blanc */
+    padding: 20px; /* Espaciament interior */
+    text-align: center; /* Centrar el text */
+    width: 100%; /* Assegura que el peu de pàgina ocupi tot l'ample */
+    margin-top: 60px; /* Espai superior per al peu de pàgina */
+}
+
+/* Contingut del peu de pàgina */
+.footer-content {
+    max-width: 1200px; /* Amplada màxima per al contingut del peu de pàgina */
+    margin: 0 auto; /* Centrar el contingut */
+    display: flex; /* Utilitzar Flexbox per a la distribució */
+    justify-content: space-between; /* Espai entre columnes */
+    align-items: center; /* Alinear verticalment el contingut */
+}
+
+/* Columnes del peu de pàgina */
+.footer-column {
+    flex: 1; /* Cada columna ocuparà el mateix espai */
+    min-width: 200px; /* Amplada mínima per a les columnes */
+    margin: 10px; /* Espai entre columnes */
+    text-align: left; /* Alinear el text a l'esquerra */
+}
+
+/* Estils per a la informació de contacte */
+.contact-info {
+    text-align: left; /* Alinear el text a l'esquerra per al contacte */
+}
+
+/* Estil per al text de copyright */
+.copyright {
+    text-align: center; /* Centrar el text de copyright */
+    flex: 2; /* Més espai per al copyright */
+}
+
+/* Estils per als enllaços de xarxes socials */
+.social-links {
+    text-align: right; /* Alinear el text a la dreta per a xarxes socials */
+}
+
+/* Estil per als títols */
+h4 {
+    margin-bottom: 10px; /* Espai sota dels encapçalaments */
+}
+
+/* Estils per a enllaços */
+a {
+    color: #fff; /* Color d'enllaços */
+    text-decoration: none; /* Sense subratllat */
+}
+
+/* Efecte al passar el cursor per a enllaços */
+a:hover {
+    text-decoration: underline; /* Subratllar al passar el ratolí */
+}
+
+/* Estils per a la secció "About" */
+.about-section {
+    padding: 60px 20px; /* Espaciament superior i inferior */
+    background-color: #ffffff; /* Fons blanc per la secció */
+}
+
+/* Ajustos per a la secció 'About' */
+.about-content {
+    display: flex; /* Utilitza Flexbox per a la distribució */
+    flex-direction: column; /* Canvia a columna per a dispositius petits */
+    align-items: center; /* Centrar el contingut */
+    gap: 2rem; /* Espai entre elements */
+}
+
+/* Estils per al text de la secció 'About' */
+.about-text {
+    max-width: 600px; /* Manté un ample màxim per a millor llegibilitat */
+    background: rgba(255, 255, 255, 0.95); /* Fons blanc semitransparent */
+    padding: 20px; /* Espaciament interior */
+    border-radius: 8px; /* Arrodonir les cantonades */
+    z-index: 1; /* Assegura que estigui per sobre d'altres elements */
+}
+
+/* Collage Adaptatiu */
+.collage-grid {
+    display: grid; /* Utilitza grid layout */
+    gap: 0.5rem; /* Espai entre elements del collage */
+    grid-template-areas: /* Defineix les àrees del collage */
+        "img1 text1"
+        "img2 img3"
+        "text2 img4";
+    grid-template-columns: 1fr 1fr; /* Dupliquen les columnes */
+
+    max-width: 450px; /* Amplada màxima per a pantalles més grans */
+    margin-left: 1rem; /* Margen a l'esquerra */
+}
+
+/* Estils per a cada element del collage */
+.collage-item {
+    position: relative; /* Posicionament relatiu per a contingut absolut */
+    overflow: hidden; /* Amaga contingut que excedeixi */
+    border-radius: 8px; /* Arrodonir les cantonades */
+    display: flex; /* Utilitza Flexbox per a la distribució */
+    align-items: center; /* Centrar verticalment */
+    justify-content: center; /* Centrar horitzontalment */
+    padding: 0.5rem; /* Espai interior */
+    font-style: italic; /* Estil de lletra itàlica */
+    font-size: 0.9rem; /* Mida de la lletra */
+    text-align: center; /* Centrar text */
+    background-color: white; /* Fons blanc per als elements del collage */
+    color: #333; /* Color del text */
+}
+
+/* Estil per a les imatges del collage */
+.collage-item img {
+    width: 100%; /* Amplada total de la imatge */
+    height: auto; /* Manté la proporció de la imatge */
+    border-radius: 8px; /* Arrodonir les cantonades de les imatges */
+    object-fit: cover; /* Ajusta la imatge per cobrir l'espai */
+}
+
+/* Assignació d'àrees per a les imatges i textos del collage */
+.img1 { grid-area: img1; }
+.img2 { grid-area: img2; }
+.img3 { grid-area: img3; }
+.img4 { grid-area: img4; }
+.text1 { grid-area: text1; }
+.text2 { grid-area: text2; }
+
+/* Estils per a blocs de cita */
+blockquote {
+    margin: 20px 0; /* Espaciament al voltant del bloc de cita */
+}
+
+/* Estil per al peu de les cites */
+blockquote footer {
+    margin-top: 40px; /* Augmentar el marge superior del peu de cita */
+    font-style: italic; /* Estil de lletra itàlica */
+    color: #ffffff; /* Color del text per al peu de cita */
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .collage-grid {
+        grid-template-areas:
+            "img1"
+            "text1"
+            "img2"
+            "img3"
+            "text2"
+            "img4";
+        grid-template-columns: 1fr;
+        max-width: 100%; /* Ocupa l'ample complet en pantalles petites */
+    }
+}
+
+/* Imatge a tot l'ample */
+.full-width-image {
+    position: relative;
+    text-align: center;
+}
+
+.full-width-image img {
+    width: 100%; /* Imatge ocupa tot l'ample */
+    height: auto;
+}
+
+/* Títol centrat */
+.centered-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 8rem; /* Augmentar la mida de la font */
+    font-family: 'Impact', sans-serif; /* Font Impact */
+    text-transform: uppercase; /* Text en majúscules */
+    text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.8); /* Ombra més pronunciada */
+    letter-spacing: 10px; /* Espaiat entre lletres augmentat */
+    font-weight: bold;
+    z-index: 1; /* Assegura que estigui per sobre de la imatge */
+}
+
+.bubble-container {
+    position: absolute; /* Assegura que estigui posicionat absolutament dins de la navbar */
+    width: 100%;
+    top: 0; /* Alinear amb la part superior de la navbar */
+    left: 0;
+    overflow: hidden; /* Prevenir overflow */
+    pointer-events: none; /* Prevenir que els clics siguin capturats per les bombolles */
+    z-index: 1; /* Assegura que sigui sota els elements de la navbar */
+}
+
+.shop-img {
+    transition: transform 1s ease; /* Suavitza la transició */
+}
+
+.shop-img:hover {
+    transform: scale(1.1); /* Augmenta la mida de la imatge al 110% */
+    z-index: 5; /* Assegura que la imatge creixent estigui per sobre d'altres elements */
+}
+
+    .about-text p, .about-text blockquote {
+        text-align: justify;
+    }
+
+
+/* Estilos Responsivos */
+
+/* Mobile 320x480 */
+/* Mobile 320x480 */
+@media (max-width: 480px) {
+    body, html { /* Assegura't que no hi hagi marge o padding */
+        margin: 0; 
+        padding: 0; 
+        overflow-x: hidden; /* Prevenir scroll horitzontal */
+    }
+
+    header {
+        padding: 0; /* Reduir padding */
+            
+        
+    }
+    
+    .section-title {
+        font-size: 1.8rem; /* Títol més petit per a mòbils */
+    }
+
+    main {
+        padding: 0; /* Eliminat padding per evitar espai en blanc */
+    }
+    
+  /* Estils per al contingut de la secció 'About' */
+.about-content {
+    padding: 10px; /* Espai interior ajustat per a la secció */
+    width: 90%; /* Ocupa un 90% de l'amplada total per deixar un marge */
+}
+
+/* Estils per al text dins de la secció 'About' */
+.about-text {
+    width: 100%; /* Ocupa tot l'ample disponible */
+    padding: 10px; /* Espai interior reduït */
+}
+
+/* Estils per als títols de secció */
+.section-title {
+    font-size: 1.5rem; /* Mida del títol reduïda per a un millor ajust */
+    text-align: center; /* Centra el títol */
+}
+
+/* Estils per a ocultar el collage d'imatges en mòbils */
+.collage-grid {
+    display: none; /* Oculta el collage d'imatges en dispositius mòbils */
+}
+
+/* Estils per al peu de pàgina */
+footer {
+    padding: 10px; /* Espai interior reduït al peu de pàgina */
+}
+
+/* Estils per al contingut del peu de pàgina */
+.footer-content {
+    flex-direction: column; /* Canvia la direcció a columna per a pantalles mòbils */
+    align-items: center; /* Centra el contingut dins del peu de pàgina */
+}
+
+/* Estils per a les columnes del peu de pàgina */
+.footer-column {
+    margin: 5px 0; /* Espai vertical entre les columnes del peu de pàgina */
+    width: 100%; /* Cada columna ocupa tot l'ample disponible */
+}
+}
+
+/* Estils per a pantalles mòbils amb amplada màxima de 800px */
+@media (max-width: 800px) {
+    .collage-grid {
+        display: none; /* Manté ocult el collage d'imatges en dispositius mòbils */
+    }
+}
+
+/* Estils per a pantalles de sobretaula entre 768px i 1366px */
+@media (min-width: 768px) and (max-width: 1366px) {
+    .about-content {
+        flex-direction: row; /* Retorna a la disposició en files en pantalles més grans */
+    }
+    .collage-grid {
+        grid-template-areas: /* Defineix l'estructura del collage d'imatges */
+            "img1 text1"
+            "img2 img3"
+            "text2 img4";
+        grid-template-columns: 1fr 1fr; /* Dos columns per a una millor distribució */
+        max-width: 450px; /* Amplada màxima per al collage d'imatges */
+    }
+    .section-title {
+        font-size: 2.5rem; /* Mida completa per al títol en pantalles grans */
+    }
+}
+
+/* Estils per a la classe p5js */
+.p5js {
+    display: flex; /* Utilitza Flexbox per a la distribució */
+    align-items: start; /* Alinea els elements a l'inici de l'eix vertical */
+    width: 100%; /* Amplada total per a l'element p5js */
+    height: 100%; /* Altura total per a l'element p5js */
+}
